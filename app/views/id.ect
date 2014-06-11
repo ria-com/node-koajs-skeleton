@@ -1,0 +1,13 @@
+<% extend 'app/views/layout/main.ect' %>
+
+<div>
+    <h1><%- @title %></h1>
+
+    id: <b><%- @data.id %></b><br/>
+    name: <b><%- @data.name %></b><br/>
+
+</div>
+
+<% block 'footer-info' : %>
+<div class="right">page: show id: <%- @data.id %></div>
+<% end %>

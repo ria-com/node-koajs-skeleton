@@ -1,0 +1,20 @@
+<% extend 'app/views/layout/main.ect' %>
+
+<div>
+    <h1><%- @title %></h1>
+
+    <% if @items?.length : %>
+    <ul>
+        <% for item in @items : %>
+        <li><%- item.name %></li>
+        <% end %>
+    </ul>
+    <% else : %>
+    <p>List is empty</p>
+    <% end %>
+
+</div>
+
+<% block 'footer-info' : %>
+<div class="right">page: list</div>
+<% end %>

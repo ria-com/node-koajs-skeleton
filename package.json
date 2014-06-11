@@ -1,0 +1,25 @@
+{
+  "name": "myKoajsApp",
+  "version": "0.0.1",
+  "description": "A simple Koajs Application Skeleton",
+  "author": {
+    "name": "Oleg Cherniy",
+    "email": "oleg.cherniy@gmail.com"
+  },
+  "dependencies": {
+    "config": "*",
+    "koa": "*",
+    "koa-routing": "*",
+    "co-views": "*",
+    "ect": "*"
+  },
+  "devDependencies": {
+    "jasmine-node": "*"
+  },
+  "scripts": {
+    "test": "node --harmony ./node_modules/jasmine-node/lib/jasmine-node/cli.js spec"
+  },
+  "engines": {
+    "node": ">=0.11.x"
+  }
+}
