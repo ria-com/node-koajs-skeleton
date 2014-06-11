@@ -47,12 +47,10 @@ $ npm test
 customize your application
 ==========================
 
-Edit 'config/default.js'
-
-**Choose your template system
+**Choose your template system**
 
 By default, implemented support [http://ectjs.com/](Ect) (by speed reasons)
 
-[https://github.com/visionmedia/consolidate.js/](A list of all support template system)
+[https://github.com/visionmedia/consolidate.js/](Consolidate): A list of all support template system
 
 __NOTE__: you must still install the engines you wish to use, add them to your package.json dependencies.
