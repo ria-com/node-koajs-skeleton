@@ -17,6 +17,7 @@
     "jasmine-node": "*"
   },
   "scripts": {
+    "start": "node --harmony index.js",
     "test": "node --harmony ./node_modules/jasmine-node/lib/jasmine-node/cli.js spec"
   },
   "engines": {
