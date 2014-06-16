@@ -49,9 +49,9 @@ customize your application
 
 **Choose your template system**
 
-By default, implemented support [http://ectjs.com/](Ect) (by speed reasons)
+By default, implemented support [Ect](http://ectjs.com/) (by speed reasons)
 
-[https://github.com/visionmedia/consolidate.js/](Consolidate): A list of all support template system
+[Consolidate](https://github.com/visionmedia/consolidate.js/): A list of all support template system
 
 __NOTE__: you must still install the engines you wish to use, add them to your package.json dependencies.
 

@@ -1,1 +1,7 @@
-{}
+{
+  "template": {
+    "options": {
+      "engine": "ect"
+    }
+  }
+}

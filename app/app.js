@@ -1,9 +1,15 @@
 var koa = require('koa'),
-    routing = require('koa-routing'),
     config = require('config');
 
 var app = koa();
-app.use(routing(app));
+
+//Comment this line to disable sessions
+require('./helpers/session')(app);
+
+//Comment this line to disable koa-body-parser
+require('./helpers/bodyparser')(app);
+
+require('./helpers/render')(app);
 
 require('./routes')(app);
 

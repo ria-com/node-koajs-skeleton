@@ -1,10 +1,12 @@
 /**
- * Module dependencies.
+ * Render
  */
-(function () {
+
+module.exports = function render(app) {
     "use strict";
-    var views = require('co-views'),
+
+    var views = require('koa-render'),
         config = require('config');
 
-    module.exports = views(config.template.path, { ext: config.template.engine })
-}())
+    app.use(views(config.template.path, config.template.options ));
+};

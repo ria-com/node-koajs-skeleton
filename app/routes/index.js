@@ -1,10 +1,19 @@
 module.exports = function routes(app) {
+    "use strict";
 
-    var indexController = require('../controllers/indexController');
+    var Router = require('koa-router');
 
-    app.route('/users')
-        .get(indexController.list)
-        .nested('/:id')
-            .get(indexController.getId);
+    var routes = new Router();
 
-}
+    /**
+     * Routes
+     * @example
+     *    http://localhost:8081/users
+     *    http://localhost:8081/users/1
+     */
+    routes
+       .get('/users',     require('../controllers/indexController').list)
+       .get('/users/:id', require('../controllers/indexController').getId);
+
+    app.use(routes.middleware());
+};
