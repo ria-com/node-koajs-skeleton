@@ -16,9 +16,8 @@
     "koa-router": "*",
     "koa-render": "*",
     "ect": "*",
-    "koa-passport": "*",
     "koa-sess": "*",
-    "koa-bodyparser": "*"
+    "koa-body-parser": "*"
   },
   "devDependencies": {
     "jasmine-node": "*"
