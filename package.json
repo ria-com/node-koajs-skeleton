@@ -17,7 +17,7 @@
     "koa-render": "*",
     "koa-sess": "*",
     "koa-passport": "*",
-    "koa-body-parser": "*",
+    "koa-bodyparser": "*",
     "passport-local": "*",
     "ect": "*"
   },
