@@ -1,19 +1,27 @@
-module.exports = function routes(app) {
+module.exports = function routes(app, passport) {
     "use strict";
 
-    var Router = require('koa-router');
+    var Router = require('koa-router'),
+        authed = require('../helpers/authedMiddleware');
 
-    var routes = new Router();
+    var router = new Router();
 
-    /**
-     * Routes
-     * @example
-     *    http://localhost:8081/users
-     *    http://localhost:8081/users/1
-     */
-    routes
-       .get('/users',     require('../controllers/indexController').list)
-       .get('/users/:id', require('../controllers/indexController').getId);
+    router
+        .get('/users', require('../controllers/indexController').list)
+        .get('/users/:id', require('../controllers/indexController').getId)
+        .get('/login', require('../controllers/loginController').login)
+        .post('/login',
+            passport.authenticate('local', {
+                successRedirect: '/secure',
+                failureRedirect: '/login'
+            })
+        )
+        .get('/logout', function*(next) {
+            this.logout();
+            this.redirect('/login')
+        })
+        .get('/secure', authed, require('../controllers/secureController').index);
 
-    app.use(routes.middleware());
+    app.use(router.middleware())
+
 };

@@ -1,6 +1,6 @@
 {
   "name": "myKoajsApp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple Koajs Application Skeleton",
   "author": {
     "name": "Oleg Cherniy",
@@ -15,9 +15,11 @@
     "koa": "*",
     "koa-router": "*",
     "koa-render": "*",
-    "ect": "*",
     "koa-sess": "*",
-    "koa-body-parser": "*"
+    "koa-passport": "*",
+    "koa-body-parser": "*",
+    "passport-local": "*",
+    "ect": "*"
   },
   "devDependencies": {
     "jasmine-node": "*"

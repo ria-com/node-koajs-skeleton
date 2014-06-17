@@ -1,5 +1,6 @@
 var koa = require('koa'),
-    config = require('config');
+    config = require('config'),
+    passport = require('./helpers/passport');
 
 var app = koa();
 
@@ -11,7 +12,10 @@ require('./helpers/bodyparser')(app);
 
 require('./helpers/render')(app);
 
-require('./routes')(app);
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./routes')(app, passport);
 
 app.listen(config.server.port, function () {
     console.log('%s listening at port %d', config.app.name, config.server.port);
