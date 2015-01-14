@@ -15,7 +15,7 @@
     "koa": "*",
     "koa-router": "*",
     "koa-render": "*",
-    "koa-sess": "*",
+    "koa-generic-session": "*",
     "koa-passport": "*",
     "koa-bodyparser": "*",
     "passport-local": "*",
