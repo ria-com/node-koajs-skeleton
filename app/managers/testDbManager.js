@@ -1,3 +1,7 @@
+/**
+ * testDB manager
+ * @module managers/testDbManager
+ */
 (function () {
     "use strict";
 

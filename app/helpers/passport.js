@@ -1,5 +1,6 @@
 /**
  * Passport
+ * @module helpers/passport
  */
 (function () {
     "use strict";

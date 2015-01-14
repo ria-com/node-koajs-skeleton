@@ -1,11 +1,14 @@
+/**
+ * Secure Controller
+ * @module controllers/secureController
+ */
 (function () {
     "use strict";
 
-    //var passport = require('../helpers/passport');
-    //var render = require('../helpers/render');
-
     module.exports = {
-        index: function * login (next) {
+
+        /** Get protected page (for logged in users only)  */
+        index: function * index (next) {
             this.body = yield this.render('secure', {
                 title: 'Secure App'
             });

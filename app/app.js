@@ -2,6 +2,10 @@ var koa = require('koa'),
     config = require('config'),
     passport = require('./helpers/passport');
 
+/**
+ * Instance of Koa
+ * @instance
+ */
 var app = koa();
 
 //Comment this line to disable sessions
