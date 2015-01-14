@@ -1,3 +1,7 @@
+/**
+ * App User Manager
+ * @module managers/userManager
+ */
 (function () {
     "use strict";
 

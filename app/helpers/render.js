@@ -1,5 +1,6 @@
 /**
  * Render
+ * @module helpers/render
  */
 
 module.exports = function render(app) {
