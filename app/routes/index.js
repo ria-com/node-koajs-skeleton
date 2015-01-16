@@ -2,6 +2,7 @@
  * Main route rules
  * @param {koa} app - Koa appliacation
  * @param {helpers/passport} passport - Adapted passport module
+ * @module routes
  */
 module.exports = function routes(app, passport) {
     "use strict";
