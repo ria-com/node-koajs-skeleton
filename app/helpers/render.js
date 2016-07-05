@@ -3,11 +3,13 @@
  * @module helpers/render
  */
 
+"use strict";
+
 module.exports = function render(app) {
     "use strict";
 
-    var views = require('koa-render'),
+    var views = require('koa-views'),
         config = require('config');
 
-    app.use(views(config.template.path, config.template.options ));
+    app.use(views(config.template.path, config.template.options));
 };

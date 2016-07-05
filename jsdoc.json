@@ -1,0 +1,37 @@
+{
+    "plugins": [ "plugins/markdown" ],
+    "markdown": {
+        "parser": "gfm",
+        "hardwrap": true
+    },
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "templates": {               
+        "cleverLinks": false,    
+        "monospaceLinks": true,  
+        "systemName": "remoteFileExplorer",
+        "footer": "Created by master",
+        "copyright": "2015",
+        "navType": "vertical",
+        "theme": "spacelab",
+        "linenums": true,
+        "collapseSymbols": true,
+        "inverseNav": false
+    },
+    "source": {
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_",
+        "exclude": [
+            "node_modules",
+            "docs"
+        ]
+    },
+    "opts": {
+        "encoding": "utf8",
+        "destination": "docs/js",
+        "recurse": true,
+        "private": true,
+        "readme": "./README.md"
+    }
+}

@@ -2,10 +2,12 @@
  * Middleware: authed
  * @module helpers/authedMiddleware
  */
-module.exports = function *authed(next) {
-    if (this.req.isAuthenticated()) {
-        yield next;
+"use strict";
+
+module.exports = function(ctx, next) {
+    if (ctx.isAuthenticated()) {
+        return next()
     } else {
-        this.redirect('/login');
+        ctx.redirect('/login');
     }
 };

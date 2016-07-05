@@ -2,17 +2,17 @@
  * Secure Controller
  * @module controllers/secureController
  */
-(function () {
-    "use strict";
+'use strict';
+const co   = require('co');
 
-    module.exports = {
 
-        /** Get protected page (for logged in users only)  */
-        index: function * index (next) {
-            this.body = yield this.render('secure', {
-                title: 'Secure App'
-            });
-            yield next;
-        }
-    }
-}());
+module.exports = {
+
+    /** Get protected page (for logged in users only)  */
+    index: co.wrap(function * index (ctx, next) {
+        yield ctx.render('secure', {
+            title: 'Secure App'
+        });
+        yield next();
+    })
+}

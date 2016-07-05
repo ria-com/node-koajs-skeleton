@@ -2,31 +2,46 @@
  * Main route rules
  * @param {koa} app - Koa appliacation
  * @param {helpers/passport} passport - Adapted passport module
+ * @module routes
  */
 module.exports = function routes(app, passport) {
     "use strict";
 
-    var Router = require('koa-router'),
-        authed = require('../helpers/authedMiddleware');
+    const
+        co   = require('co'),
+        Router = require('koa-router'),
+        authed = require('../helpers/authedMiddleware'),
+        
+        
+    // Controllers
+        indexController  = require('../controllers/indexController'),
+        loginController  = require('../controllers/loginController'),
+        secureController = require('../controllers/secureController');
 
     var router = new Router();
 
     router
-        .get('/users', require('../controllers/indexController').list)
-        .get('/users/:id', require('../controllers/indexController').getId)
-        .get('/login', require('../controllers/loginController').login)
+        .get('/',          indexController.index)
+        .get('/users',     indexController.list)
+        .get('/users/:id', indexController.getId)
+
+        .get('/login',     loginController.login)
         .post('/login',
             passport.authenticate('local', {
                 successRedirect: '/secure',
                 failureRedirect: '/login'
             })
         )
-        .get('/logout', function*(next) {
-            this.logout();
-            this.redirect('/login')
-        })
-        .get('/secure', authed, require('../controllers/secureController').index);
+        .get('/logout', co.wrap(function*(ctx) {
+            ctx.logout();
+            ctx.redirect('/login')
+        }))
+        .get('/secure', authed, secureController.index);
 
-    app.use(router.middleware())
-
+    app.use(router.routes());
+    app.use(router.allowedMethods({
+        throw: true,
+        notImplemented: () => new Boom.notImplemented(),
+        methodNotAllowed: () => new Boom.methodNotAllowed()
+    }));
 };

@@ -6,7 +6,7 @@
     <% if @items?.length : %>
     <ul>
         <% for item in @items : %>
-        <li><%- item.name %></li>
+        <li><a href="/users/<%- item.id %>"><%- item.name %></a></li>
         <% end %>
     </ul>
     <% else : %>

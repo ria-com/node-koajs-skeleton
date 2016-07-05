@@ -1,0 +1,16 @@
+<% extend 'app/views/layout/main.ect' %>
+
+<div>
+    <h1><%- @title %></h1>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/users">Users</a></li>
+        <li><a href="/secure">Secure</a></li>
+    </ul>
+
+</div>
+
+<% block 'footer-info' : %>
+<div class="right">page: list</div>
+<% end %>
