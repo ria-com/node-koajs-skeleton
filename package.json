@@ -1,7 +1,7 @@
 {
   "name": "myKoajsApp",
-  "version": "0.2.0",
-  "description": "A simple Koajs Application Skeleton",
+  "version": "2.0.0",
+  "description": "A simple Koajs v2 Application Skeleton",
   "author": {
     "name": "Oleg Cherniy",
     "email": "oleg.cherniy@gmail.com"
@@ -11,24 +11,27 @@
     "test": "./test"
   },
   "dependencies": {
+    "boom": "^3.2.2",
     "config": "*",
-    "koa": "*",
-    "koa-router": "*",
-    "koa-render": "*",
-    "koa-generic-session": "*",
-    "koa-passport": "*",
+    "ect": "*",
+    "koa": "^2.0.0",
     "koa-bodyparser": "*",
-    "passport-local": "*",
-    "ect": "*"
+    "koa-generic-session": "*",
+    "koa-passport": "^2.1.1",
+    "koa-router": "^7.0.1",
+    "koa-views": "^5.0.2",
+    "passport-local": "*"
   },
   "devDependencies": {
-    "jasmine-node": "*"
+    "jasmine-node": "*",
+    "jsdoc": "*"
   },
   "scripts": {
     "start": "node --harmony index.js",
+    "doc": "env > test.txt;jsdoc ./app -c jsdoc.json",
     "test": "node --harmony ./node_modules/jasmine-node/lib/jasmine-node/cli.js spec"
   },
   "engines": {
-    "node": ">=0.11.x"
+    "node": ">=0.4.2"
   }
 }

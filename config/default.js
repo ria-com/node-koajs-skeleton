@@ -9,7 +9,7 @@ module.exports = {
     template: {
         path: 'app/views',
         options: {
-            ext: 'ect',
+            extension: 'ect',
             cache: false
         }
     },

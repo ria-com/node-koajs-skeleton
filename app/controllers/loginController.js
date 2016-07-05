@@ -2,17 +2,16 @@
  * Login Controller
  * @module controllers/loginController
  */
-(function () {
-    "use strict";
+'use strict';
+const co   = require('co');
 
-    module.exports = {
+module.exports = {
 
-        /** Get login page */
-        login: function * login (next) {
-            this.body = yield this.render('login', {
-                title: 'login form'
-            });
-            yield next;
-        }
-    }
-}());
+    /** Get login page */
+    login: co.wrap(function * login (ctx, next) {
+        yield ctx.render('login', {
+            title: 'login form'
+        });
+        yield next();
+    })
+}

@@ -1,12 +1,10 @@
-var koa = require('koa'),
+"use strict";
+const Koa = require('koa'),
     config = require('config'),
-    passport = require('./helpers/passport');
+    convert = require('koa-convert'),
+    passport = require('./helpers/passport')
 
-/**
- * Instance of Koa
- * @instance
- */
-var app = koa();
+const app = new Koa();
 
 //Comment this line to disable sessions
 require('./helpers/session')(app);

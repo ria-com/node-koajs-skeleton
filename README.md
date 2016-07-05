@@ -1,7 +1,7 @@
 node-koajs-skeleton
 ===================
 
-A simple [Koajs Application Skeleton](https://github.com/ria-com/node-koajs-skeleton)
+A simple [Koajs v2 Application Skeleton](https://github.com/ria-com/node-koajs-skeleton)
 
 quick start
 ===========
@@ -59,6 +59,7 @@ __NOTE__: you must still install the engines you wish to use, add them to your p
 roadmap
 =======
 
-   * Add authorization helper skeleton
+   * Add i18n (internationalization) helper skeleton
+   * <s>Add comments to skeleton code</s>
    * Add logger helper skeleton
-   * Add comments to skeleton code
+   
